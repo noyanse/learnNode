@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue第一课</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="app">{{msg}}</div>
+	<script type="text/javascript">
+		var data = {
+			msg: 'Backbone.js为复杂WEB应用程序提供模型(models)、集合(collections)、视图(views)的结构'
+		}
+
+		//原生JS渲染数据
+		//document.getElementById('app').innerHTML = data.msg
+		//一旦数据变化，我们要显性的更改页面内容
+		//document.getElementById('app').innerHTML = data.msg
+
+		//jquery更好的方式
+		//$("#app").html(data.msg)
+
+		//$("#app").html(data.msg)
+
+		//使用vue的第一步创建实例化对象没这个vue实例化对象就是一个VM对象
+
+		new Vue({
+			//绑定视图
+			el: '#app',
+			//绑定数据
+			data: data
+		})
+			//更新数据
+			data.msg = '其中模型用于绑定键值数据和自定义事件；集合附有可枚举函数的丰富API； 视图可以声明事件处理函数，并通过RESRful JSON接口连接到应用程序。'
+
+	</script>
+</body>
+</html> 

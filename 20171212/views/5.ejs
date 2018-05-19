@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- include是ejs提供的 并不是js有的-->
+	<% if(type=='admin'){ %>
+	<%	include ../style/admin.css %>
+	<% }else{ %>
+	<%	include ../style/user.css %>
+	<% } %>
+</body>
+</html>

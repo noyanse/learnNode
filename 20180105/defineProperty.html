@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue实现数据绑定</title>
+</head>
+<body>
+	<span id="uName"></span><br>
+	<input type="text" id="username">
+<script type="text/javascript">
+	var obj={//声明obj对象
+		pwd: "123456"//这样也是给obj添加属性
+	};
+	//定义新的属性defineProperty(名字，需要添加的属性，属性的描述)
+	Object.defineProperty(obj, "a", {
+	  value : 37,
+	  writable : true,
+	  enumerable : true,
+	  configurable : true
+	});
+	//obj.username的值总是与uName和username的值相同
+	Object.defineProperty(obj,"username",{
+		// value: "Jack"
+		get: function(){
+			document.getElementById('username').value;
+		},
+		set: function(val){
+			console.log("set init");
+			document.getElementById('username').value = val;
+		
+		}
+		
+	}) 
+	Object.defineProperty(obj,"uName",{
+		// value: "Jack"
+		get: function(){
+			document.getElementById('uName').innerHTML;
+		},
+		set: function(val){
+			console.log("set init");
+			document.getElementById('uName').innerHTML = val;		
+		}
+		
+	}) 
+	//这个例子只是数据和dom节点的绑定
+//--------------------------------------------------------------------------------------------------
+	/*
+	document.getElementById('username').addEventListener("keyup",function(ev){
+		//ev.target当前事件对象
+		document.getElementById('uName').innerText = ev.target.value;
+	})
+	*/
+//在控制台输入obj可以看到有get和set函数，当给obj添加username属性时会触发set函数,obj.username="hello"
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<!-- <%= json.arr[1].user %> -->
+		<% for(var i=0;i<json.arr.length;i++){ %>
+			<div>用户名<%= json.arr[i].user %></div>
+			<div>密码<%= json.arr[i].pass %></div>
+		<% } %>
+
+		
+	</div>
+</body>
+</html>

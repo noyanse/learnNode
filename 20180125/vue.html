@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="app">{{msg}}</div>
+	<script type="text/javascript">
+		var data = {
+			msg: 'hello',
+			obj:{
+				color: 'red'
+			}
+		}
+		var app = new Vue({
+			el: '#app',
+			data: data
+		})
+		//console.log(app)
+
+		app.msg = 'world'
+//查看属性值是否相等
+		//console.log(app.msg == data.msg)//true
+		//console.log(app.obj == data.obj)//true
+//视图改变了是否会更新数据？
+		document.getElementsByTagName('div')[0].innerHTML = '更新数据'
+
+		console.log(app.msg)//world
+		console.log(data.msg)//word
+
+	</script>
+</body>
+</html>

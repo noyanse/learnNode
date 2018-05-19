@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{*内容}}</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div v-bind:title="title" style="background:{{background}};color:{{color}};">{{content}}</div>
+	<script type="text/javascript">
+	var data = {
+		id:10,
+		background: 'green',
+		color: 'red',
+		content: '内容',
+		title: '标题'
+	}
+	//实例化vue
+	var app = new Vue({
+		el: 'div',
+		data: data
+	})
+	console.log(app.color)
+	</script>
+</body>
+</html>

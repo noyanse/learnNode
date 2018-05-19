@@ -1,0 +1,30 @@
+设计layout
++src
+	+components
+	   layout.vue
+- layout.vue:
+<template>
+	<div class="app-header">header</div>
+	<div class="app-content">
+		content
+		<router-view />
+	</div>
+	<div class="app-footer">footer</div>
+</template>
+
+export default {
+	data(){
+
+	}
+}
+
+- main.js:
+import Layout from './components/layout'
+
+new Vue({
+	el: '#app',
+	template: '<Layout/>',
+	components: { Layout }
+})
+
+共同的css根节点可以放进去

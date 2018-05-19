@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="app">{{msg}}</div>
+	<!-- 自定义名称选择器 -->
+	<myDiv>{{msg}}</myDiv>
+	<script type="text/javascript">
+		var data = {
+			msg: 'hello'
+		}
+		var app = new Vue({
+			el: '#app',
+			data: data
+		})
+
+
+	</script>
+</body>
+</html>

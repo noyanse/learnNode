@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul li{float: left;margin-left: 10px;list-style: none;}
+		ul li img{width: 400px;height: 200px;}
+	</style>
+</head>
+<body>
+	<h1>Hello Node</h1>
+	<ul>
+<!-- banner -->
+		<% for(var i=0;i<banners.length;i++){ %>
+			<li>
+				<img src="<%= banners[i].src %>" alt=""/>
+				<div class="text-box">
+					<h2><%= banners[i].title %></h2>
+					<p><%= banners[i].sub_title %></p>
+				</div>
+			</li>
+		<% } %>		
+	</ul>
+
+<!-- 文章 -->
+	<div class="content">	
+			<ul>
+				<% for(var i=0;i<articles.length;i++){ %>
+
+				<li>
+					<a href="/article?id=<%= articles[i].ID %>">
+						<h3><%= articles[i].title %></h3>
+						<p><%= articles[i].summary %></p>
+					</a>
+				</li>
+
+				<% } %>
+			</ul>
+		</div>
+</body>
+</html>

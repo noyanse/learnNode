@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理后台首页</title>
+</head>
+<body>
+	<div class="page">
+		<% include components/top.inc.ejs %>
+		<div class="content-wrap">
+			<div class="add">
+				<!-- ?表示提交到当前页 -->
+				<form action="?" method="post">
+					标题：<input type="text" name="title"><br>
+					描述：<textarea name="description" cols="30" rows="5"></textarea><br>
+					链接：<input type="text" name="href"><br>
+					<input type="submit" value="添加">
+				</form>
+				
+			</div>
+			<table border='1' width="100%" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>标题</th>
+						<th>描述</th>
+						<th>链接</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(var i=0;i<banners.length;i++){ %>
+					<tr>
+						<td><%= banners[i].ID %></td>
+						<td><%= banners[i].title %></td>
+						<td><%= banners[i].description %></td>
+						<td><%= banners[i].href %></td>
+						<td>
+							<a href="?act=mod&id=<%=banners[i].ID%>">修改</a>
+							<a href="?act=del&id=<%=banners[i].ID%>" onclick="return confirm('确定删除吗')">删除</a>
+						</td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		<!-- 如果不修改就不显示这个div,不然mod_data报错not defined -->
+			<% if(typeof mod_data != 'undefined'){ %>
+			<div class="mod_dialog">修改
+				<form action="?" method="post">
+					<!-- 判断是不是修改模式 -->
+					<input type="hidden" name="mod_id" value="<%= mod_data.ID %>">
+					标题：<input type="text" name="title" value="<%= mod_data.title %>"><br>
+					描述：<textarea name="description" cols="30" rows="5"><%= mod_data.description %></textarea><br>
+					链接：<input type="text" name="href" value="<%= mod_data.href %>"><br>
+					<input type="submit" value="添加">
+				</form>		
+			</div>
+		<% } %>
+	</div>
+	
+</body>
+</html>

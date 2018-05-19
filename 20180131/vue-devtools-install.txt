@@ -1,0 +1,9 @@
+1.git clone https://github.com/vuejs/vue-devtools.git
+2.进入 vue-dev-tools-master
+	npm install 安装依赖
+3.npm run build
+4.修改shells/chrome/mainifest.json 中的persistent为true
+5.打开谷歌浏览器的设置--->扩展程序，并勾选开发者模式--->
+然后将刚刚编译后的工程中的shells目录下，chrome的整个文件夹直接拖拽到当前浏览器中，并选择启用，即可将插件安装到浏览器
+并选择启用--->
+chrome，至此恭喜已经安装成功！！！

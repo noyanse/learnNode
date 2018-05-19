@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style type="text/css">
+        img{
+            width: 200px;height: 200px;
+        }
+    </style>
+</head>
+<body>
+<!-- <%= JSON.stringify(article_data) %> -->
+<div class="content">
+	<div class="header clear">
+        <h2><img src="img/head.png" alt=""/></h2>
+        <p><%= article_data.author %></p>
+    </div>
+    <div class="cont">
+    	<h3><%= article_data.title %></h3>
+        <div class="time">
+            <p><%= article_data.sDate %><span><img src="<%= article_data.author_src %>" alt=""/></span></p>
+
+        </div>
+        <div class="text-box">
+            <%- article_data.context %>
+        </div>
+    </div>
+</div>
+
+<div class="zan">
+    <a href="/article?id=<%= article_data.ID %>&act=like">
+        <span><%= article_data.n_like %></span>赞
+    </a>
+</div>
+
+</body>
+</html>
